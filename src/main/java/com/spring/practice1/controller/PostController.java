@@ -1,6 +1,6 @@
 package com.spring.practice1.controller;
 
-import com.spring.practice1.dto.MemberDTO;
+import com.spring.practice1.data.dto.MemberDTO;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
