@@ -1,10 +1,13 @@
 package com.spring.practice1.controller;
 
+import com.spring.practice1.common.Constants;
+import com.spring.practice1.common.exception.CustomException;
 import com.spring.practice1.data.dto.ProductDTO;
 import com.spring.practice1.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -58,4 +61,8 @@ public class ProductController {
     @DeleteMapping("/product/{productId}")
     public ProductDTO deleteProduct(@PathVariable String productId) {return null;}
 
+    @PostMapping("/product/exception")
+    public void exceptionTest() throws CustomException {
+        throw new CustomException(Constants.ExceptionClass.PRODUCT, HttpStatus.BAD_REQUEST, "의도한 에러가 발생하였습니다.");
+    }
 }
